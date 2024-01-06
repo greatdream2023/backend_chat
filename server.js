@@ -21,7 +21,9 @@ app.use(cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/friend-invitation", friendInvitationRoutes);
-
+app.use("/",function(req, res){
+  res.send({"message":"hi"});
+})
 const server = http.createServer(app);
 socketServer.registerSocketServer(server);
 
